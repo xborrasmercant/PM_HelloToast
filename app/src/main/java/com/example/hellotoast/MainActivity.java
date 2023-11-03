@@ -3,6 +3,7 @@ package com.example.hellotoast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -20,6 +21,17 @@ public class MainActivity extends AppCompatActivity {
         toastButton = findViewById(R.id.toast_button);
         countButton = findViewById(R.id.count_button);
         countNumber = (TextView) findViewById(R.id.count_number);
+
+        countButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int number = Integer.parseInt((String) countNumber.getText());
+
+                number++;
+
+                countNumber.setText(Integer.toString(number));
+            }
+        });
 
 
 
